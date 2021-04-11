@@ -115,8 +115,8 @@ while (i < 6) {
   i <- i + 1
 }
 ```
-- We can break the loop with **break statement.
-- With the **next statement, we can skip an iteration without terminating the loop.
+- We can break the loop with **break** statement.
+- With the **next** statement, we can skip an iteration without terminating the loop.
 
 ### For loops
 
@@ -127,7 +127,7 @@ for (x in 1:10) {
 ```
 - With the for loop we can execute a set of statements, once for each item in a vector, array, list, etc.
 - The for loop does not require an indexing variable to set beforehand, like with while loops.
-- **break and **next statements works the same as while.
+- **break** and **next** statements works the same as while.
 
 ## Functions in R
 - A function is a block of code which only runs when it is called.
@@ -160,7 +160,7 @@ my_function("Stewie")
 ```
 - To give the parameter a default value, use my_function(par = 'yo'){} in the function definition.
 - When calling the function, number of arguments must be tha same of parameters of function definition.
-- To return a value from the function use **return() function.
+- To return a value from the function use **return()** function.
 ```
 my_function <- function(x) {
   return (5 * x)
@@ -202,7 +202,7 @@ my_function <- function() {
 my_function()
 ```
 - If you create a variable with the same name inside a function, this variable will be local, and can only be used inside the function.
-- To create a global variable inside a function, you can use the **global **assignment operator <<-
+- To create a global variable inside a function, you can use the **global assignment** operator <<-
 ```
 my_function <- function() {
 txt <<- "fantastic"
@@ -220,7 +220,7 @@ print(txt)
 
 ## R Vectors
 - A vector is simply a list of items that are of the same type.
-- use **c() function to make a vector. x<-c('yo', 'man')
+- use **c()** function to make a vector. x<-c('yo', 'man')
 - A vector can contain only one type of data. If we add numeric data or logical data along with string then it will treat all values as string.
 - 1:10 will return a vector with 1 difference. (1 2 3 ... 10)
 - 1.5:5.5 (1.5 2.5 3.5 4.5 5.5)
@@ -246,12 +246,14 @@ fruits <- c("banana", "apple", "orange", "mango", "lemon")
 # Access the first and third item (banana and orange)
 fruits[c(1, 3)] 
 ```
+- To find out how many items a vector has, use the **length()** function.
+- To add new value in a vector, simply assign value to that index. fruits[4] <- "Kiwi".
 - You can also use negative index numbers to access all items except the ones specified. Like fruits[c(-1)]. It ignores 1st value.
 - To change an item use fruits[1] <- "kiwi"
 
 ## Repeat vectors
 
-- Use rep() function.
+- Use **rep()** function.
 - To repeat each value; repeat_each <- rep(c(1,2,3), each = 3)
 - It will print 111222333
 
@@ -263,9 +265,78 @@ fruits[c(1, 3)]
 
 ## Generating sequenced vectors
 
-- **: operator generates sequenced vector with interval of value 1.
-- To make bigger or smaller steps in a sequence, use the **seq() function:
+- **:** operator generates sequenced vector with interval of value 1.
+- To make bigger or smaller steps in a sequence, use the **seq()** function:
 - numbers <- seq(from = 0, to = 100, by = 20) # prints 0 20 40 60 80 100
+
+## Lists
+
+- A list in R can contain many different data types inside it.
+- Use **list()** function to create one.
+- Indexing of list also starts with 1.
+```
+thislist <- list("apple", "banana", "cherry")
+
+thislist[1] 
+```
+- To access the value use []. Same as vectors.
+- To change the value, same as vectors.
+- Find the length with **length()** function.
+- To find out if a specified item is present in a list, use the **%in%** operator.
+```
+thislist <- list("apple", "banana", "cherry")
+
+"apple" %in% thislist
+```
+
+## Add item to the list
+
+- To add an item to the end of the list use **append()** function.
+```
+thislist <- list("apple", "banana", "cherry")
+
+append(thislist, "orange")
+```
+- To add an item to the right of a specified index, add "after=index number" in the append() function.
+```
+thislist <- list("apple", "banana", "cherry")
+
+append(thislist, "orange", after = 2)
+```
+- fruits[-1] will return the list except the index value 1.
+- So, with the help of this feature, we can delete index 1 by copying the updated list in new variable.
+- You can specify a range of indexes by specifying where to start and where to end the range, by using the : operator.
+- Example; fruits[1:4]
+- It will start from index 1 to index 4. Both **incuded.**
+
+## Loop through a list and vectors:
+- Vectors
+```
+fruits <- c("banana", "apple", "orange")
+
+for (x in fruits){
+	print(x)
+}
+```
+- List looping is also same as vector's.
+```
+thislist <- list("apple", "banana", "cherry")
+
+for (x in thislist) {
+  print(x)
+}
+```
+
+## Join two lists:
+
+- The most common way to do this is to use the **c() function**.
+```
+list1 <- list("a", "b", "c")
+list2 <- list(1,2,3)
+list3 <- c(list1,list2)
+
+list3 
+```
 
 
 
