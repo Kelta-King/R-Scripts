@@ -215,7 +215,7 @@ print(txt)
 ```
 - Also, use the global assignment operator if you want to change a global variable inside a function.
 
-# Some advance concepts
+# Data Structures
 - Here we will cover list, vectors, plotting, stats etc. 
 
 ## R Vectors
@@ -337,6 +337,90 @@ list3 <- c(list1,list2)
 
 list3 
 ```
+
+## R Matrices
+
+- Two dimentional data set.
+- Use **matrix()** function to make one.
+```
+# Create a matrix
+thismatrix <- matrix(c(1,2,3,4,5,6), nrow = 3, ncol = 2)
+
+# Print the matrix
+thismatrix 
+```
+- Assignment of c() starts column wise. So, 1,2,3 will be in column1 and 4,5,6 will be in column2.
+- Note: c() function is used to concatenate items together.
+- To access matrix item, thismtrix[1,2] will be used.
+- To access an entire row, use thismatrix[1,]. Entire 1st row will be displayed.
+- To access an entire column, use thismatrix[,1]. Entire 1st column will be displayed.
+- Access more than one rows, use thismatrix[c(1,2),]. Row 1 and 2 will be displayed.
+- Access more than one columns, use thismatrix[,c(1,2)]. Column 1 and 2 will be displayed.
+
+## Add and remove from Matrices
+- To add Row use **rbind()** function.
+```
+thismatrix <- matrix(c("apple", "banana", "cherry", "orange","grape", "pineapple", "pear", "melon", "fig"), nrow = 3, ncol = 3)
+
+newmatrix <- cbind(thismatrix, c("strawberry", "blueberry", "raspberry"))
+
+# Print the new matrix
+newmatrix 
+```
+- To add Column use **cbind()** function.
+```
+thismatrix <- matrix(c("apple", "banana", "cherry", "orange","grape", "pineapple", "pear", "melon", "fig"), nrow = 3, ncol = 3)
+
+newmatrix <- rbind(thismatrix, c("strawberry", "blueberry", "raspberry"))
+
+# Print the new matrix
+newmatrix 
+```
+- Remember one thing that always try to maintain the dimention. Otherwise it will pop an error.
+- To remove things from matrix use thismatrix[-c(index1), -c(index2)].
+- thismatrix[-c(1),] will remove first row.
+- thismatrix[,-c(1)] will remove first column.
+- thismatrix[-c(1),-c(1)] will remove first row and first column.
+- To check whether an element exists in the matrix use **%in%** operator.
+- Use the **dim()** function to find the amout of rows and columns in a matrix.
+- Use **length()** function to find the dimention of any matrix.
+
+## Combine two matrices
+- We can use **rbind()** and **cbind()** functions to combine two matrices. 
+- Make sure both have same rows count or columns count accordingly.
+
+## Arrays in R
+
+- Arrays can have more than 2 dimentions.
+- Use **array()** function to make and dim parameter to specify the dimention. 
+```
+arr <- array(c(1:24), dim = c(4, 3, 2))
+arr
+```
+- In dim = c(4, 3, 2), 4 is number of rows, 3 is number of columns, 2 is how much dimention we wants.
+- Arrays can only have **one data type**.
+- To access any array item arr[2, 1, 2] use this.
+- array[row position, column position, matrix level]
+
+- To access the entire 1st row use arr[c(1),,1]
+- To access the entire 2nd column use arr[,c(1), 1]
+
+- To check if an item exists in an array use **%in%** operator. 'yo' %in% arr.
+- To get the amout of rows available in an array use **dim()** function.
+- To get the dimention of an array use **length()** function.
+
+- Loop in an array is simple.
+```
+thisarray <- c(1:24)
+multiarray <- array(thisarray, dim = c(4, 3, 2))
+
+for(x in multiarray){
+  print(x)
+} 
+```
+
+
+
 
 
 
