@@ -1,4 +1,4 @@
-# R-Language Notes
+# Basic R-Language Notes
 Notes for Learning R language
 
 ## Printing Something
@@ -85,7 +85,7 @@ x <- " Hey man, I am
 - Will find the difference after vectors.
 
 - :, %in%, %*% (Miscellaneous operators)
-- (creates a series of numbers), (Find out if an element belongs to a vector), (matrix multiplication)
+- (creates a series of numbers, seperates all by 1), (Find out if an element belongs to a vector), (matrix multiplication)
 
 ## if...else
 
@@ -215,10 +215,57 @@ print(txt)
 ```
 - Also, use the global assignment operator if you want to change a global variable inside a function.
 
+# Some advance concepts
+- Here we will cover list, vectors, plotting, stats etc. 
 
+## R Vectors
+- A vector is simply a list of items that are of the same type.
+- use **c() function to make a vector. x<-c('yo', 'man')
+- A vector can contain only one type of data. If we add numeric data or logical data along with string then it will treat all values as string.
+- 1:10 will return a vector with 1 difference. (1 2 3 ... 10)
+- 1.5:5.5 (1.5 2.5 3.5 4.5 5.5)
+- 1.5:5.4 (1.5 2.5 3.5 4.5)
+- To sort a vector use sort() function.
 
+```
+fruits <- c("banana", "apple", "orange", "mango", "lemon")
+numbers <- c(13, 3, 5, 7, 20, 2)
 
+sort(fruits)  # Sort a string
+sort(numbers) # Sort numbers 
+```
 
+- To access a value of vector use [index].
+- Like; x<-c("Yo", "No", "hey")
+- x[1] # prints "Yo"
+- In R indexing starts from 1.
+- We can also refer to different indexes using c() function.
+```
+fruits <- c("banana", "apple", "orange", "mango", "lemon")
+
+# Access the first and third item (banana and orange)
+fruits[c(1, 3)] 
+```
+- You can also use negative index numbers to access all items except the ones specified. Like fruits[c(-1)]. It ignores 1st value.
+- To change an item use fruits[1] <- "kiwi"
+
+## Repeat vectors
+
+- Use rep() function.
+- To repeat each value; repeat_each <- rep(c(1,2,3), each = 3)
+- It will print 111222333
+
+- To repeat sequence; repeat_sequence <- rep(c(1,2,3), times = 3)
+- It will print 123123123
+
+- To repeat each value independently; repeat_independent <- rep(c(1,2,3), times = c(4,3,2))
+- It will print 111122233
+
+## Generating sequenced vectors
+
+- **: operator generates sequenced vector with interval of value 1.
+- To make bigger or smaller steps in a sequence, use the **seq() function:
+- numbers <- seq(from = 0, to = 100, by = 20) # prints 0 20 40 60 80 100
 
 
 
