@@ -419,6 +419,71 @@ for(x in multiarray){
 } 
 ```
 
+## Data Frames in R 
+- Data Frames are data displayed in a format as a table.
+- Can have different types of data but the data type of one column must be same.
+- **data.frame()** function is used for DF creation.
+
+```
+Data_Frame <- data.frame (
+  Training = c("Strength", "Stamina", "Other"),
+  Pulse = c(100, 150, 120),
+  Duration = c(60, 30, 45)
+)
+
+# Print the data frame
+Data_Frame 
+```
+- In the above example, Training, Pulse, Duration is a columns and their values have respective column values.
+- Use **summary()** function to summarizes the data.
+- Use [], [[]] or $ to access items in DF.
+- Data_Frame[1], Data_Frame[["Training"]], Data_Frame[[1]], Data_Frame$Training will all load 1st column.
+- Data_Frame[1] loads value as data.frame type while Data_Frame[[1]] returns a vector. So, generally for computation purpose use [[index]].
+- Use **rbind()** and **cbind()** function to add rows and columns respectively.
+- New_row_DF <- rbind(Data_Frame, c("Strength", 110, 110))
+- New_col_DF <- cbind(Data_Frame, Values = c('val1', 'val2', 'val3'))
+
+## Operations on DataFrame
+- To remove a row use **c()** function.
+- n <- df[-c(1),] Removes first row.
+- n <- df[,-c(1)] Removes first column.
+- n <- df[-c(1), -c(1)] removes first row and column.
+- Use **dim()** function to find the amount of rows and columns.
+- Use **length()** function to get the columns count in df.
+- **ncols()** and **nrows()** also returns counts for columns and rows respectively.
+- We can also use **rbind()** function to combine two dfs rows (vertical combination).
+```
+Data_Frame1 <- data.frame (
+  Training = c("Strength", "Stamina", "Other"),
+  Pulse = c(100, 150, 120),
+  Duration = c(60, 30, 45)
+)
+
+Data_Frame2 <- data.frame (
+  Training = c("Stamina", "Stamina", "Strength"),
+  Pulse = c(140, 150, 160),
+  Duration = c(30, 30, 20)
+)
+
+New_Data_Frame <- rbind(Data_Frame1, Data_Frame2)
+New_Data_Frame 
+```
+- We can use **cbind()** function to combine two dfs columns (Horizontally).
+```
+Data_Frame3 <- data.frame (
+  Training = c("Strength", "Stamina", "Other"),
+  Pulse = c(100, 150, 120),
+  Duration = c(60, 30, 45)
+)
+
+Data_Frame4 <- data.frame (
+  Steps = c(3000, 6000, 2000),
+  Calories = c(300, 400, 300)
+)
+
+New_Data_Frame1 <- cbind(Data_Frame3, Data_Frame4)
+New_Data_Frame1
+```
 
 
 
