@@ -15,3 +15,4 @@ plot(1:10, pch=25)
 
 # Point size of graph
 plot(1:10, cex=2)
+

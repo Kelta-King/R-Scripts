@@ -14,3 +14,11 @@ plot(1:6, 19:24)
 
 # Provide only one parameter
 plot(1:10)
+
+# Dataset plot
+df = data.frame(
+	Name = c("Kelta1", "Kelta2"),
+	Marks = c(23, 24),
+	height = c(143, 145)
+)
+plot(df['Marks'])
