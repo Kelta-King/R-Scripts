@@ -8,7 +8,7 @@ Notes for Learning R language
 
 ## Comments
 
-- Only single line comment (stats with #)
+- Only single line comment (starts with #)
 
 ## Variables
 
@@ -484,6 +484,48 @@ Data_Frame4 <- data.frame (
 New_Data_Frame1 <- cbind(Data_Frame3, Data_Frame4)
 New_Data_Frame1
 ```
+
+## R Factors
+- Used to catagorize the data.
+- Gender: male, female etc.
+- In order to make a factor, use **factor()** function.
+
+```
+# Create a factor
+music_genre <- factor(c("Jazz", "Rock", "Classic", "Classic", "Pop", "Jazz", "Rock", "Jazz"))
+
+# Print the factor
+music_genre 
+```
+- To print only levels use **level(music_genre)**.
+- We can also specify level argument inside the function.
+- x <- factor(c("Classic", "Opera"), levels = c("Classic")).
+- Use the **length()** function to get the length of all the c() values of factor.
+- To access the factor items use [].
+- music_genre[3] # Gets third value of factor's vector.
+
+## Change values in factor
+
+- To change the value in a factor, do this. fac[2] <- "Yoman"
+```
+music_genre <- factor(c("Jazz", "Rock", "Classic", "Classic", "Pop", "Jazz", "Rock", "Jazz"))
+
+music_genre[3] <- "Pop"
+
+music_genre[3] 
+```
+
+- But note one thing here, that we cannot change the value of vector if the value is not in the levels.
+- But if we have already specified that new value in the levels already then we can do this.
+```
+music_genre <- factor(c("Jazz", "Rock", "Classic", "Classic", "Pop", "Jazz", "Rock", "Jazz"), levels = c("Classic", "Jazz", "Pop", "Rock", "Opera"))
+
+music_genre[3] <- "Opera"
+
+music_genre[3]
+```
+
+
 
 
 
