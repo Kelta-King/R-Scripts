@@ -43,3 +43,13 @@ plot(x1, y1, main="Observation of Cars", xlab="Car age", ylab="Car speed", col="
 points(x2, y2, col="blue", cex=2) 
 ```
 
+## Pie chart
+- Use **pie()** function.
+- By default, the plotting of the first pie starts from the x-axis and move counterclockwise.
+- The size of each pie is determined by comparing the value with all the other values, by using this formula: The value divided by the sum of all values: x/sum(x)
+- Change the default start angle use init.angle. It is in degrees.
+- To add labels and headers write pie(x, label = mylabel, main = "Fruits")
+- To add colors to each pie do pie(x, label = mylabel, main = "Fruits", col = colors)
+- We can add legends to the plot by **legend()** function.
+- Legends can have bottomright, bottom, bottomleft, left, topleft, top, topright, right, center values.
+
