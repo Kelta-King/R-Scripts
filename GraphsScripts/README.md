@@ -53,3 +53,17 @@ points(x2, y2, col="blue", cex=2)
 - We can add legends to the plot by **legend()** function.
 - Legends can have bottomright, bottom, bottomleft, left, topleft, top, topright, right, center values.
 
+## Bar Plot
+- Use **barplot()** function.
+- Use **names.org = labels** to give names to each bar.
+- As usual **col='blue'** gives color to bar.
+- To change the texture of a bar use **density** parameter.
+- density = 10, density = 100 etc.
+- Use width = c(1,2,3) parameter to provide different width to each bar. 
+- Horizontal bar can be plotted by horiz = TRUE parameter.
+```
+x <- c("A", "B", "C", "D")
+y <- c(2, 4, 6, 8)
+
+barplot(y, names.arg = x, horiz = TRUE) 
+```
