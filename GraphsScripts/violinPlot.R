@@ -1,0 +1,8 @@
+set.seed(1)
+x <-rep(c("S1","S2","S3","S4","S5"),each=50)
+set.seed(1)
+x <-rep(c("S1","S2","S3","S4","S5"),each=100)
+y <-rnorm(500)
+grp <-rep(c("A","B"),times=250)
+df <-data.frame(x,y,grp)
+ggplot(df,aes(grp, y,fill=x)) + geom_violin()
